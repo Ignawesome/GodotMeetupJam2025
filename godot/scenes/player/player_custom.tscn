@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1tjdipv5uytc"]
+
+[ext_resource type="PackedScene" uid="uid://8oy3xm2sff8" path="res://addons/character-controller/fps/fps_controller_3d.tscn" id="1_hajgj"]
+[ext_resource type="Script" uid="uid://dhcqb73nwfki8" path="res://scenes/player/player_custom.gd" id="2_n0lgm"]
+[ext_resource type="PackedScene" uid="uid://b3eh3rtus6aci" path="res://addons/character-controller/example/main/audios/player_audios.tscn" id="4_6saul"]
+
+[node name="Player" instance=ExtResource("1_hajgj")]
+collision_layer = 4
+script = ExtResource("2_n0lgm")
+input_back_action_name = "move_backward"
+input_forward_action_name = "move_forward"
+input_left_action_name = "move_left"
+input_right_action_name = "move_right"
+input_sprint_action_name = "move_sprint"
+input_jump_action_name = "move_jump"
+input_crouch_action_name = "move_crouch"
+input_fly_mode_action_name = "move_fly_mode"
+underwater_env = null
+abilities_path = Array[NodePath]([])
+
+[node name="PlayerCamera" type="Camera3D" parent="Head/FirstPersonCameraReference" index="0"]
+unique_name_in_owner = true
+
+[node name="InteractRay" type="RayCast3D" parent="Head/FirstPersonCameraReference/PlayerCamera" index="0"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+
+[node name="Player Audios" parent="." index="9" instance=ExtResource("4_6saul")]
