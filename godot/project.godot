@@ -23,7 +23,7 @@ LimboConsole="*res://addons/limbo_console/limbo_console.gd"
 Shaker="*res://addons/shaker/src/Shaker.gd"
 GlobalGameEvents="*res://scripts/autoloads/global_game_events.gd"
 Preloader="*res://scripts/preloader.gd"
-GameManager="*res://game_manager.gd"
+GameGlobals="*res://scripts/autoloads/game_globals.gd"
 
 [display]
 
@@ -63,11 +63,6 @@ ui_accept={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194310,"physical_keycode":0,"key_label":0,"unicode":4194310,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
-]
-}
-exit={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 move_left={
@@ -146,9 +141,16 @@ locale/translations=PackedStringArray("res://i18n/translation.de.translation", "
 
 [layer_names]
 
-3d_physics/layer_1="Static"
-3d_physics/layer_2="Interactible"
-3d_physics/layer_3="Player"
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="enemies"
+3d_physics/layer_4="hitboxes"
+3d_physics/layer_5="shakeables"
+3d_physics/layer_6="interactables"
+3d_physics/layer_7="grabbables"
+3d_physics/layer_8="bullets"
+3d_physics/layer_9="cards"
+3d_physics/layer_10="ladders"
 
 [rendering]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dm6f7u2evp547"
+path="res://.godot/imported/Bare Step Snow Hard E.ogg-ca8013ef5aa3bd78c074d06438c3655e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Snow/Bare Step Snow Hard E.ogg"
+dest_files=["res://.godot/imported/Bare Step Snow Hard E.ogg-ca8013ef5aa3bd78c074d06438c3655e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

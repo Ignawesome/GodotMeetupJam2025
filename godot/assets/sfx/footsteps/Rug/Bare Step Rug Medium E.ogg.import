@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://82nc472nt287"
+path="res://.godot/imported/Bare Step Rug Medium E.ogg-e0169406eaf422588316e0c7ec264159.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Rug/Bare Step Rug Medium E.ogg"
+dest_files=["res://.godot/imported/Bare Step Rug Medium E.ogg-e0169406eaf422588316e0c7ec264159.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

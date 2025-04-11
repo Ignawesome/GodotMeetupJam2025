@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cad70gts0ivna"
+path="res://.godot/imported/Land Step Water B.ogg-9ef4528afa0911328c28ef49f387667c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Water or Mud/Land Step Water B.ogg"
+dest_files=["res://.godot/imported/Land Step Water B.ogg-9ef4528afa0911328c28ef49f387667c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

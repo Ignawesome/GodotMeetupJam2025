@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4sgjt0aeivua"
+path="res://.godot/imported/Shoe Step Snow Soft D.ogg-bf0c1c63c07575edeb8860b3e7feb294.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Snow/Shoe Step Snow Soft D.ogg"
+dest_files=["res://.godot/imported/Shoe Step Snow Soft D.ogg-bf0c1c63c07575edeb8860b3e7feb294.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

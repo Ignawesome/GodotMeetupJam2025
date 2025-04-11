@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyk20kndb5fwg"
+path="res://.godot/imported/Bare Step Metal Soft A.ogg-90eb0470e5efe7ad93d04096afecbfcf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Metal/Bare Step Metal Soft A.ogg"
+dest_files=["res://.godot/imported/Bare Step Metal Soft A.ogg-90eb0470e5efe7ad93d04096afecbfcf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

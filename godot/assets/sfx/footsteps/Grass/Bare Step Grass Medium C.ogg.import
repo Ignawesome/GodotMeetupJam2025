@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxy8ghi7l5dvb"
+path="res://.godot/imported/Bare Step Grass Medium C.ogg-76a054b438213549a267e3adb513f2f1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Grass/Bare Step Grass Medium C.ogg"
+dest_files=["res://.godot/imported/Bare Step Grass Medium C.ogg-76a054b438213549a267e3adb513f2f1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

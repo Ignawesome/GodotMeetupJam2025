@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqgy0kpkodmmg"
+path="res://.godot/imported/Jump Step Stone A.ogg-22bcdf669d9f185cf6f06d8c0f360a49.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Stone/Jump Step Stone A.ogg"
+dest_files=["res://.godot/imported/Jump Step Stone A.ogg-22bcdf669d9f185cf6f06d8c0f360a49.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

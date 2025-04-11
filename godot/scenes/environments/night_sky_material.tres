@@ -1,0 +1,72 @@
+[gd_resource type="ShaderMaterial" load_steps=15 format=3 uid="uid://ca4h2j754d03l"]
+
+[ext_resource type="Shader" uid="uid://bb7ulbeuyu2ci" path="res://scripts/shaders/sky/stylized_sky.gdshader" id="1_54r30"]
+[ext_resource type="Texture2D" uid="uid://chp3gp0lcrfgc" path="res://assets/images/moon_cookie.png" id="2_aoe7m"]
+[ext_resource type="Texture2D" uid="uid://dvuwb0yce4sb7" path="res://scripts/shaders/sky/assets/shooting_star_sampler.png" id="3_pw1wc"]
+
+[sub_resource type="Curve" id="Curve_l2fm7"]
+_data = [Vector2(0.0167464, 0.299611), 0.0, 0.0, 0, 0, Vector2(0.198565, 0.906615), 0.0, 0.0, 0, 0, Vector2(1, 0.190662), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_26tw6"]
+curve = SubResource("Curve_l2fm7")
+
+[sub_resource type="Gradient" id="Gradient_b8ax2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mhmcp"]
+frequency = 0.0305
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_us6w6"]
+color_ramp = SubResource("Gradient_b8ax2")
+noise = SubResource("FastNoiseLite_mhmcp")
+
+[sub_resource type="Gradient" id="Gradient_v7x4g"]
+offsets = PackedFloat32Array(0.151042, 0.708333)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.972549)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qnln8"]
+frequency = 0.005
+fractal_type = 2
+fractal_weighted_strength = 0.79
+domain_warp_amplitude = 30.61
+domain_warp_frequency = 1.41
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tmyk1"]
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_v7x4g")
+noise = SubResource("FastNoiseLite_qnln8")
+
+[sub_resource type="Gradient" id="Gradient_sflh7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ahc63"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ig5n0"]
+color_ramp = SubResource("Gradient_sflh7")
+noise = SubResource("FastNoiseLite_ahc63")
+
+[resource]
+shader = ExtResource("1_54r30")
+shader_parameter/cloud_shape_sampler = SubResource("NoiseTexture2D_tmyk1")
+shader_parameter/cloud_noise_sampler = SubResource("NoiseTexture2D_us6w6")
+shader_parameter/cloud_curves = SubResource("CurveTexture_26tw6")
+shader_parameter/clouds_samples = 16
+shader_parameter/shadow_sample = 4
+shader_parameter/clouds_density = 0.6
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_smoothness = 0.04
+shader_parameter/clouds_light_color = Color(0.258082, 0.258082, 0.258082, 1)
+shader_parameter/clouds_shadow_intensity = 4.0
+shader_parameter/high_clouds_sampler = SubResource("NoiseTexture2D_ig5n0")
+shader_parameter/high_clouds_density = 0.1
+shader_parameter/top_color = Color(0, 0, 0, 1)
+shader_parameter/bottom_color = Color(0.0761253, 0.0819352, 0.0536212, 1)
+shader_parameter/sun_scatter = Color(0.043, 0.08575, 0.1, 1)
+shader_parameter/astro_tint = Color(0.31, 0.306125, 0.2945, 1)
+shader_parameter/astro_sampler = ExtResource("2_aoe7m")
+shader_parameter/astro_scale = 3.0
+shader_parameter/astro_intensity = 1.0
+shader_parameter/stars_intensity = 1.1
+shader_parameter/shooting_stars_intensity = 0.1
+shader_parameter/shooting_star_sampler = ExtResource("3_pw1wc")
+shader_parameter/shooting_star_tint = Color(1, 1, 1, 1)

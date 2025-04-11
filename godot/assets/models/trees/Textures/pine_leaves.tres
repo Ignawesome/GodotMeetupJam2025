@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://doxt71kl1cp27"]
+
+[ext_resource type="Texture2D" uid="uid://oebtkhlo2ay5" path="res://assets/models/trees/Textures/Pine_Leaves.png" id="1_ydokj"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_ydokj")

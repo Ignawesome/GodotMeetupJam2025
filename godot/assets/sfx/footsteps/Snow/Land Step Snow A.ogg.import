@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xrd3gi5hk3sy"
+path="res://.godot/imported/Land Step Snow A.ogg-8de944185298843ac7d0db3f002e8bfb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Snow/Land Step Snow A.ogg"
+dest_files=["res://.godot/imported/Land Step Snow A.ogg-8de944185298843ac7d0db3f002e8bfb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbh8oymvijcry"
+path="res://.godot/imported/Shoe Step Stone Hard C.ogg-65705392e53354d7b0ac7281e5f1a300.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Stone/Shoe Step Stone Hard C.ogg"
+dest_files=["res://.godot/imported/Shoe Step Stone Hard C.ogg-65705392e53354d7b0ac7281e5f1a300.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

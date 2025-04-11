@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dptt8iwdkvbgj"
+path="res://.godot/imported/Bare Step Water Soft B.ogg-7f9f0a97fbc13e27661b748b300f93cd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Water or Mud/Bare Step Water Soft B.ogg"
+dest_files=["res://.godot/imported/Bare Step Water Soft B.ogg-7f9f0a97fbc13e27661b748b300f93cd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

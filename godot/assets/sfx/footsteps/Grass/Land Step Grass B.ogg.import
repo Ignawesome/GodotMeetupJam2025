@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b34vy6ds8hj58"
+path="res://.godot/imported/Land Step Grass B.ogg-5b8a3f8ad4359a4c9505634227962834.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Grass/Land Step Grass B.ogg"
+dest_files=["res://.godot/imported/Land Step Grass B.ogg-5b8a3f8ad4359a4c9505634227962834.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

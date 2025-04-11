@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4nulm708450"]
+
+[ext_resource type="PackedScene" uid="uid://bckkn3nygvqwp" path="res://scenes/environments/pared.tscn" id="1_kr04u"]
+[ext_resource type="PackedScene" uid="uid://ctmnmiv60g2da" path="res://assets/models/trees/FBX/DeadBirch_3.fbx" id="2_52caa"]
+[ext_resource type="PackedScene" uid="uid://bdchc13xa6vk3" path="res://assets/models/trees/FBX/Birch_1.fbx" id="3_ddj1u"]
+
+[node name="Curva" type="Marker3D"]
+
+[node name="Pasillo5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Pared" parent="Pasillo5" instance=ExtResource("1_kr04u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510093, 1.36917, 0.111798)
+
+[node name="Pared3" parent="Pasillo5" instance=ExtResource("1_kr04u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.510093, 1.36917, -2.78394)
+
+[node name="Pared4" parent="Pasillo5" instance=ExtResource("1_kr04u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.28001, 1.36917, -2.79815)
+
+[node name="Pasillo6" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2)
+
+[node name="Pared" parent="Pasillo6" instance=ExtResource("1_kr04u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510093, 1.36917, 0.111798)
+skeleton = NodePath("../../..")
+
+[node name="Pared3" parent="Pasillo6" instance=ExtResource("1_kr04u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.510093, 1.36917, -2.76927)
+skeleton = NodePath("../../..")
+
+[node name="Pared4" parent="Pasillo6" instance=ExtResource("1_kr04u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.34549, 1.36917, -2.78394)
+skeleton = NodePath("../../..")
+
+[node name="DeadBirch_3" parent="." instance=ExtResource("2_52caa")]
+transform = Transform3D(0.371822, 0, 0.644015, 0, 0.743644, 0, -0.644015, 0, 0.371822, -2.546, 0, -2.61387)
+
+[node name="Birch_1" parent="." instance=ExtResource("3_ddj1u")]
+transform = Transform3D(0.673169, 0, 0, 0, 0.673169, 0, 0, 0, 0.673169, 0.160019, 0, 0.0699872)

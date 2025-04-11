@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="AudioInteract" load_steps=4 format=3 uid="uid://dx5kojv0cn4yl"]
+[gd_resource type="Resource" script_class="AudioInteract" load_steps=7 format=3 uid="uid://dx5kojv0cn4yl"]
 
-[ext_resource type="AudioStream" uid="uid://bfsapqnlf7can" path="res://addons/character-controller/example/main/jute-dh-steps/stepwood_1.wav" id="1_0irbh"]
+[ext_resource type="AudioStream" uid="uid://clbnien1rjbwm" path="res://assets/sfx/footsteps/Wood/Jump Step Wood A.ogg" id="1_61a5x"]
 [ext_resource type="Script" uid="uid://b3803ujrtwrim" path="res://addons/character-controller/example/main/audios/audio_interact.gd" id="1_h7qps"]
-[ext_resource type="AudioStream" uid="uid://c7fdqytdjvcqe" path="res://addons/character-controller/example/main/jute-dh-steps/stepwood_2.wav" id="2_203mn"]
+[ext_resource type="AudioStream" uid="uid://bduvjj26nxli0" path="res://assets/sfx/footsteps/Wood/Land Step Wood A.ogg" id="2_8xkls"]
+[ext_resource type="AudioStream" uid="uid://dr10fif8jbp52" path="res://assets/sfx/footsteps/Wood/Shoe Step Wood Hard A.ogg" id="4_2j53v"]
+[ext_resource type="AudioStream" uid="uid://ctqotd66krlef" path="res://assets/sfx/footsteps/Wood/Shoe Step Wood Hard B.ogg" id="5_s00kx"]
+[ext_resource type="AudioStream" uid="uid://b7nh7iji68pvx" path="res://assets/sfx/footsteps/Wood/Shoe Step Wood Hard C.ogg" id="6_ihkt4"]
 
 [resource]
 script = ExtResource("1_h7qps")
-jump_audio = ExtResource("1_0irbh")
-landed_audio = ExtResource("2_203mn")
-step_audios = Array[AudioStream]([ExtResource("1_0irbh"), ExtResource("2_203mn")])
+jump_audio = ExtResource("1_61a5x")
+landed_audio = ExtResource("2_8xkls")
+step_audios = Array[AudioStream]([ExtResource("4_2j53v"), ExtResource("5_s00kx"), ExtResource("6_ihkt4")])

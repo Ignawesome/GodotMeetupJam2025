@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://d2h5743m7h0gc"]
+
+[ext_resource type="Shader" uid="uid://byo8l8opsy0ej" path="res://scripts/shaders/fractal_texture.gdshader" id="1_h14mo"]
+[ext_resource type="Texture2D" uid="uid://bajxbgq6y8e1x" path="res://assets/models/textures/grass_002/Grass_002_COLOR.jpg" id="2_pks0o"]
+[ext_resource type="Texture2D" uid="uid://wrgm6p0xaabg" path="res://assets/models/textures/grass_002/Grass_002_NRM.jpg" id="3_cjn5u"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h14mo")
+shader_parameter/uv_scale = 22.29
+shader_parameter/ground_texture = ExtResource("2_pks0o")
+shader_parameter/normal_texture = ExtResource("3_cjn5u")
+shader_parameter/albedo_intensity = 0.145

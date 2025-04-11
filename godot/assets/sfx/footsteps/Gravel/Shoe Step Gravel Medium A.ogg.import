@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpjr140aim120"
+path="res://.godot/imported/Shoe Step Gravel Medium A.ogg-19e3e881a5f0f8ca2f9fdb13e028295f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Gravel/Shoe Step Gravel Medium A.ogg"
+dest_files=["res://.godot/imported/Shoe Step Gravel Medium A.ogg-19e3e881a5f0f8ca2f9fdb13e028295f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

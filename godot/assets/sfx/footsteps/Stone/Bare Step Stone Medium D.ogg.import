@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d05bwt7d6uydh"
+path="res://.godot/imported/Bare Step Stone Medium D.ogg-c03ecd79d57c38570db007657d2faacb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Stone/Bare Step Stone Medium D.ogg"
+dest_files=["res://.godot/imported/Bare Step Stone Medium D.ogg-c03ecd79d57c38570db007657d2faacb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

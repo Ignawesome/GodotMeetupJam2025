@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bh1tccql07ij8"
+path="res://.godot/imported/Jump Step Grass B.ogg-89b791438972ea6d6f20daf990ca883f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Grass/Jump Step Grass B.ogg"
+dest_files=["res://.godot/imported/Jump Step Grass B.ogg-89b791438972ea6d6f20daf990ca883f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

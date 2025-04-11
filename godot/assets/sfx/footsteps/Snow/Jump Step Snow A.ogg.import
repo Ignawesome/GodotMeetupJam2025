@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crpiudnlxctbw"
+path="res://.godot/imported/Jump Step Snow A.ogg-9ba61dc0a78a2651ef3da165326188ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Snow/Jump Step Snow A.ogg"
+dest_files=["res://.godot/imported/Jump Step Snow A.ogg-9ba61dc0a78a2651ef3da165326188ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

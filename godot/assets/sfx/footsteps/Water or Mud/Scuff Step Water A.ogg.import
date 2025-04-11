@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpm65mh28gpkf"
+path="res://.godot/imported/Scuff Step Water A.ogg-5b1f98f40f8ae78c1377e3698f187dea.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Water or Mud/Scuff Step Water A.ogg"
+dest_files=["res://.godot/imported/Scuff Step Water A.ogg-5b1f98f40f8ae78c1377e3698f187dea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

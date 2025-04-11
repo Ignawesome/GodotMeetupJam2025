@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b3508oky27h4k"
+path="res://.godot/imported/Shoe Step Grass Soft C.ogg-2549b120b146abc134532ccc8fa6f94e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Grass/Shoe Step Grass Soft C.ogg"
+dest_files=["res://.godot/imported/Shoe Step Grass Soft C.ogg-2549b120b146abc134532ccc8fa6f94e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

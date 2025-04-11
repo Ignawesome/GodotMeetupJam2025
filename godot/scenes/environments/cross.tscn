@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3uwy73cbq3q2"]
+
+[ext_resource type="PackedScene" uid="uid://bckkn3nygvqwp" path="res://scenes/environments/pared.tscn" id="1_e573n"]
+[ext_resource type="PackedScene" uid="uid://prmh8jqos5c5" path="res://assets/models/trees/FBX/DeadBirch_1.fbx" id="2_u4adx"]
+[ext_resource type="PackedScene" uid="uid://ctmnmiv60g2da" path="res://assets/models/trees/FBX/DeadBirch_3.fbx" id="3_rdsgn"]
+
+[node name="Cross" type="Marker3D"]
+
+[node name="Pasillo6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1.28389)
+
+[node name="Pared" parent="Pasillo6" instance=ExtResource("1_e573n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510093, 1.36917, 0.111798)
+skeleton = NodePath("../../..")
+
+[node name="Pared3" parent="Pasillo6" instance=ExtResource("1_e573n")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.510093, 1.36917, -2.78394)
+skeleton = NodePath("../../..")
+
+[node name="Pasillo7" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.87893, 0, 4.3148)
+
+[node name="Pared" parent="Pasillo7" instance=ExtResource("1_e573n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510093, 1.36917, 0.111798)
+skeleton = NodePath("../../..")
+
+[node name="Pared3" parent="Pasillo7" instance=ExtResource("1_e573n")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.510093, 1.36917, -2.78394)
+skeleton = NodePath("../../..")
+
+[node name="Pasillo8" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.87893, 0, -3.37317)
+
+[node name="Pared" parent="Pasillo8" instance=ExtResource("1_e573n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510093, 1.36917, 0.111798)
+skeleton = NodePath("../../..")
+
+[node name="Pared2" parent="Pasillo8" instance=ExtResource("1_e573n")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.88311, 1.36917, 2.62003)
+skeleton = NodePath("../../..")
+
+[node name="Pared3" parent="Pasillo8" instance=ExtResource("1_e573n")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.510093, 1.36917, -2.78394)
+skeleton = NodePath("../../..")
+
+[node name="Pared4" parent="Pasillo8" instance=ExtResource("1_e573n")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.76885, 1.36917, 2.53324)
+skeleton = NodePath("../../..")
+
+[node name="DeadBirch_1" parent="." instance=ExtResource("2_u4adx")]
+transform = Transform3D(0.614922, 0, 0, 0, 0.614922, 0, 0, 0, 0.614922, 0.04743, -0.129732, -1.32074)
+
+[node name="DeadBirch_2" parent="." instance=ExtResource("2_u4adx")]
+transform = Transform3D(-0.159154, 0, -0.593969, 0, 0.614922, 0, 0.593969, 0, -0.159154, -0.23243, -0.129732, 1.54371)
+
+[node name="DeadBirch_3" parent="." instance=ExtResource("2_u4adx")]
+transform = Transform3D(-0.532538, 0, 0.307461, 0, 0.614922, 0, -0.307461, 0, -0.532538, -3.12355, -0.129732, 1.24808)
+
+[node name="DeadBirch_4" parent="." instance=ExtResource("2_u4adx")]
+transform = Transform3D(-0.434816, 0, -0.434816, 0, 0.614922, 0, 0.434816, 0, -0.434816, -3.00722, -0.129732, -1.30742)
+
+[node name="DeadBirch_5" parent="." instance=ExtResource("3_rdsgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.808205, 0.0518215, 0.339868)

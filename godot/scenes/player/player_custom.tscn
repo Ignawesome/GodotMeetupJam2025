@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1tjdipv5uytc"]
+[gd_scene load_steps=5 format=3 uid="uid://c1tjdipv5uytc"]
 
 [ext_resource type="PackedScene" uid="uid://8oy3xm2sff8" path="res://addons/character-controller/fps/fps_controller_3d.tscn" id="1_hajgj"]
-[ext_resource type="Script" uid="uid://dhcqb73nwfki8" path="res://scenes/player/player_custom.gd" id="2_n0lgm"]
+[ext_resource type="Script" uid="uid://b1l8cxk2wm3p1" path="res://addons/character-controller/example/main/player.gd" id="2_hajgj"]
+[ext_resource type="Script" uid="uid://cc5cjv8rfakvh" path="res://scripts/components/interact/interactors/raycast_interactor_3d.gd" id="3_i5ycv"]
 [ext_resource type="PackedScene" uid="uid://b3eh3rtus6aci" path="res://addons/character-controller/example/main/audios/player_audios.tscn" id="4_6saul"]
 
 [node name="Player" instance=ExtResource("1_hajgj")]
-collision_layer = 4
-script = ExtResource("2_n0lgm")
+script = ExtResource("2_hajgj")
 input_back_action_name = "move_backward"
 input_forward_action_name = "move_forward"
 input_left_action_name = "move_left"
@@ -23,7 +23,8 @@ unique_name_in_owner = true
 
 [node name="InteractRay" type="RayCast3D" parent="Head/FirstPersonCameraReference/PlayerCamera" index="0"]
 unique_name_in_owner = true
-target_position = Vector3(0, 0, -2)
-collision_mask = 2
+collision_mask = 32
+script = ExtResource("3_i5ycv")
+metadata/_custom_type_script = "uid://cc5cjv8rfakvh"
 
 [node name="Player Audios" parent="." index="9" instance=ExtResource("4_6saul")]

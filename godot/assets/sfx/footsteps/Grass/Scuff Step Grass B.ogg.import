@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byjfw1jedvpx0"
+path="res://.godot/imported/Scuff Step Grass B.ogg-bf8c597c102efefa825d7ababa7a83bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Grass/Scuff Step Grass B.ogg"
+dest_files=["res://.godot/imported/Scuff Step Grass B.ogg-bf8c597c102efefa825d7ababa7a83bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

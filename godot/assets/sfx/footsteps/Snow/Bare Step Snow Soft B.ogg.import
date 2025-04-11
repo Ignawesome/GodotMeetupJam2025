@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5epjupaestbf"
+path="res://.godot/imported/Bare Step Snow Soft B.ogg-ab1a8c02526d834c995dd40bbe715155.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Snow/Bare Step Snow Soft B.ogg"
+dest_files=["res://.godot/imported/Bare Step Snow Soft B.ogg-ab1a8c02526d834c995dd40bbe715155.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

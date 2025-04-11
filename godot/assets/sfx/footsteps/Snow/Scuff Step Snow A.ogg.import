@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdgm6v0s0syaa"
+path="res://.godot/imported/Scuff Step Snow A.ogg-4d5fffcac6c584c09568de85566b5204.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Snow/Scuff Step Snow A.ogg"
+dest_files=["res://.godot/imported/Scuff Step Snow A.ogg-4d5fffcac6c584c09568de85566b5204.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

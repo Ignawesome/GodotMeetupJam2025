@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://m4lgbuwwxrrt"
+path="res://.godot/imported/Scuff Step Sand B.ogg-f31fb28d2ba01fd6a4357c13af4ead1f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Sand/Scuff Step Sand B.ogg"
+dest_files=["res://.godot/imported/Scuff Step Sand B.ogg-f31fb28d2ba01fd6a4357c13af4ead1f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

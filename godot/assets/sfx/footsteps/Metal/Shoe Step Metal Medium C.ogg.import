@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dip1ws5arcr6c"
+path="res://.godot/imported/Shoe Step Metal Medium C.ogg-74355393414f84b370343ef8f32c5b53.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Metal/Shoe Step Metal Medium C.ogg"
+dest_files=["res://.godot/imported/Shoe Step Metal Medium C.ogg-74355393414f84b370343ef8f32c5b53.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

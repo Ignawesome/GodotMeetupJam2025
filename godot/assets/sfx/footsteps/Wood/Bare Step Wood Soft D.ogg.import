@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ck3fxp042p0c5"
+path="res://.godot/imported/Bare Step Wood Soft D.ogg-055a908f69fffe2b570d8d872bef399e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/footsteps/Wood/Bare Step Wood Soft D.ogg"
+dest_files=["res://.godot/imported/Bare Step Wood Soft D.ogg-055a908f69fffe2b570d8d872bef399e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0w8rtjiyd4w8"]
+
+[ext_resource type="PackedScene" uid="uid://bckkn3nygvqwp" path="res://scenes/environments/pared.tscn" id="1_vvaps"]
+[ext_resource type="PackedScene" uid="uid://prmh8jqos5c5" path="res://assets/models/trees/FBX/DeadBirch_1.fbx" id="2_4ttno"]
+[ext_resource type="PackedScene" uid="uid://cabid0xpwcnoy" path="res://assets/models/trees/FBX/DeadBirch_6.fbx" id="3_pnuh6"]
+
+[node name="Pasillo" type="Marker3D"]
+
+[node name="Pared" parent="." instance=ExtResource("1_vvaps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000995874, 1.36917, 1.43913)
+
+[node name="Pared3" parent="." instance=ExtResource("1_vvaps")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.000995874, 1.36917, -1.45661)
+
+[node name="DeadBirch_1" parent="." instance=ExtResource("2_4ttno")]
+transform = Transform3D(0.557175, 0, -0.255812, 0, 0.613093, 0, 0.255812, 0, 0.557175, -2.33046, 2.38419e-07, -1.1813)
+
+[node name="DeadBirch_6" parent="." instance=ExtResource("3_pnuh6")]
+transform = Transform3D(0.0385362, 0, -0.603771, 0, 0.605, 0, 0.603771, 0, 0.0385362, -2.54968, 0, 1.44359)

@@ -3,18 +3,6 @@ extends Node3D
 ## Base class for demo level.
 ## Manages mouse inputs and their capture.
 
-## If true, Esc key quit game
-@export var fast_close := true
-
-
-func _ready() -> void:
-	if !OS.is_debug_build():
-		fast_close = false
-	if fast_close:
-		print("** Fast Close enabled in the 'level.gd' script **")
-		print("** 'Esc' to close 'Shift + F1' to release mouse **")
-	set_process_input(fast_close)
-
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

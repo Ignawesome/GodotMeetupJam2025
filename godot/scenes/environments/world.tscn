@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://dp21lwyd7ektd"]
+
+[ext_resource type="Material" uid="uid://ca4h2j754d03l" path="res://scenes/environments/night_sky_material.tres" id="1_5dde6"]
+[ext_resource type="Shader" uid="uid://byo8l8opsy0ej" path="res://scripts/shaders/fractal_texture.gdshader" id="1_f4hs7"]
+[ext_resource type="Texture2D" uid="uid://ca3fvmjrvtxmp" path="res://assets/models/textures/brown_mud_leaves_01_1k/brown_mud_leaves_01_diff_1k.jpg" id="2_ut518"]
+[ext_resource type="Texture2D" uid="uid://emtr1qk7apq0" path="res://assets/models/textures/brown_mud_leaves_01_1k/brown_mud_leaves_01_nor_gl_1k.jpg" id="3_5dde6"]
+[ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="5_5dde6"]
+[ext_resource type="PackedScene" uid="uid://d0w8rtjiyd4w8" path="res://scenes/environments/pasillo.tscn" id="5_aiuh7"]
+[ext_resource type="PackedScene" uid="uid://d4nulm708450" path="res://scenes/environments/curva.tscn" id="6_s6w06"]
+[ext_resource type="PackedScene" uid="uid://d15c8efq5ixob" path="res://scenes/environments/conexion_t.tscn" id="7_kkcbo"]
+[ext_resource type="PackedScene" uid="uid://d3uwy73cbq3q2" path="res://scenes/environments/cross.tscn" id="8_5le38"]
+
+[sub_resource type="Sky" id="Sky_pjb6r"]
+sky_material = ExtResource("1_5dde6")
+
+[sub_resource type="Environment" id="Environment_548bx"]
+background_mode = 2
+sky = SubResource("Sky_pjb6r")
+tonemap_mode = 4
+fog_enabled = true
+fog_light_energy = 0.6
+fog_sun_scatter = 0.1
+fog_sky_affect = 0.016
+fog_height = 1.5
+fog_height_density = 0.05
+adjustment_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aiuh7"]
+render_priority = 0
+shader = ExtResource("1_f4hs7")
+shader_parameter/uv_scale = 10.0
+shader_parameter/ground_texture = ExtResource("2_ut518")
+shader_parameter/normal_texture = ExtResource("3_5dde6")
+shader_parameter/albedo_intensity = 0.19
+
+[node name="World" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_548bx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, -0.286518, 0.839539, 0.461607, -0.409769, 0.328133, -0.851128, 0, 0, 0)
+light_color = Color(0.598525, 0.598525, 0.598525, 1)
+light_energy = 0.385
+shadow_enabled = true
+
+[node name="Piso" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Piso"]
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = SubResource("ShaderMaterial_aiuh7")
+
+[node name="Laberinto" type="Node3D" parent="."]
+
+[node name="Pasillo" parent="Laberinto" instance=ExtResource("5_aiuh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18083, -1.23937)
+
+[node name="Curva" parent="Laberinto" instance=ExtResource("6_s6w06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.18083, 0)
+
+[node name="Curva2" parent="Laberinto" instance=ExtResource("6_s6w06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7016, 0.18083, -0.0155511)
+
+[node name="ConexionT" parent="Laberinto" instance=ExtResource("7_kkcbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4796, 0.0592158, 11.2474)
+
+[node name="Cross" parent="Laberinto" instance=ExtResource("8_5le38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77453, 0.18083, 11.2519)
+
+[node name="Player" parent="." instance=ExtResource("5_5dde6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138747, 1.02151, -1.22517)
+speed = 3.0
+step_interval = 3.0

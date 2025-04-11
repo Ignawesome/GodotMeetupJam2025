@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2t6smyr8xtty"]
+[gd_scene load_steps=34 format=3 uid="uid://c2t6smyr8xtty"]
 
 [ext_resource type="Script" uid="uid://bmy13ib0322y" path="res://addons/character-controller/example/main/level.gd" id="1_cikgd"]
-[ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="2_nvo2f"]
 [ext_resource type="Material" uid="uid://2ciy11rdndma" path="res://addons/character-controller/example/main/materials/grass.tres" id="3_7vb8p"]
 [ext_resource type="PackedScene" uid="uid://b3wdcta6c4k4t" path="res://addons/character-controller/example/main/geometry/floor.tscn" id="3_80rlo"]
 [ext_resource type="PackedScene" uid="uid://dh7wg5y8ky5d8" path="res://addons/character-controller/example/main/water_area_3d.tscn" id="3_ebamq"]
@@ -11,7 +10,9 @@
 [ext_resource type="PhysicsMaterial" path="res://addons/character-controller/example/main/physics/wood.tres" id="8_04xdu"]
 [ext_resource type="Material" uid="uid://c72msuxs6n2a8" path="res://addons/character-controller/example/main/materials/leaves.tres" id="8_fcbu8"]
 [ext_resource type="Material" uid="uid://ckvcdcn2iue87" path="res://addons/character-controller/example/main/materials/wood.tres" id="11_cakef"]
+[ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="12_frivk"]
 [ext_resource type="Texture2D" uid="uid://svijnbaaeuol" path="res://addons/character-controller/example/main/textures/Free DEMO Pixel Skies Background pack by Digital Moons/demo01_PixelSky.png" id="12_olhen"]
+[ext_resource type="Script" uid="uid://pehr8dumgm64" path="res://scripts/components/interact/interactables/interactable_3d.gd" id="13_7jbyv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_egctf"]
 size = Vector3(8, 4, 4)
@@ -77,6 +78,8 @@ ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w25cx"]
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_cikgd")
 
@@ -115,11 +118,6 @@ material_override = ExtResource("7_ngjv3")
 [node name="Floor6" parent="." instance=ExtResource("3_80rlo")]
 transform = Transform3D(-2.98942e-07, 0, -10, 0, 1, 0, 6.839, 0, -4.37114e-07, 0, -0.5, -16.512)
 material_override = ExtResource("3_7vb8p")
-
-[node name="Player" parent="." instance=ExtResource("2_nvo2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62268e-06, 6, 13)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Head/FirstPersonCameraReference" index="0"]
 
 [node name="Area3D" parent="." instance=ExtResource("3_ebamq")]
 transform = Transform3D(0.491574, 0, 0, 0, 1, 0, 0, 0, 0.555284, 0, -3, 5.93584)
@@ -466,4 +464,21 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75
 shadow_enabled = true
 directional_shadow_max_distance = 250.0
 
-[editable path="Player"]
+[node name="Player" parent="." instance=ExtResource("12_frivk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 7.47618, 12.7726)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.05145, 0.5, 0)
+use_collision = true
+
+[node name="Interactable3D" type="Area3D" parent="CSGBox3D"]
+script = ExtResource("13_7jbyv")
+id = "BoxID"
+title = "Box Title"
+description = "This is a Box"
+title_translation_key = "BOX_KEY"
+description_translation_key = "THIS IS A BOX"
+metadata/_custom_type_script = "uid://pehr8dumgm64"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/Interactable3D"]
+shape = SubResource("BoxShape3D_w25cx")
