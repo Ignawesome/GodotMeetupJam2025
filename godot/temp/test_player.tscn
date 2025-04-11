@@ -22,6 +22,15 @@ unique_name_in_owner = true
 [node name="InteractRay" type="RayCast3D" parent="Head/PlayerCamera"]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -2)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0, 1, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_65kuw")
+
+[node name="Context" type="Label" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+vertical_alignment = 1

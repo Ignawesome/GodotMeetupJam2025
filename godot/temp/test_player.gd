@@ -5,31 +5,40 @@ const SPEED = 15.0
 const JUMP_VELOCITY = 4.5
 
 @onready var player_camera: Camera3D = %PlayerCamera
+@onready var interact_ray: RayCast3D = %InteractRay
+var rayCollision = false #es true Si InteractRay del player colisiona con un área o body
+
+func check_ray_collision() -> void:
+	var collider = %InteractRay.get_collider()
+	#Chequea las colisiones del InteractRay del Player
+	if(%InteractRay.is_colliding()):
+		if(collider.get_name() == 'Interactable'):
+			#Si es un objeto interactuable despliega el menú de contexto
+			$Context.text = 'Interactuar: (E)'
+			$Context.visible = true
+			#Al presionar E se interactúa con el objeto
+			if(Input.is_key_pressed(KEY_E)):
+				collider.enable_interaction()
+	else:
+		$Context.visible = false
+		
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+func _process(delta: float) -> void:
+	var move_vector := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	var camera_orientation := (transform.basis * Vector3(move_vector.x, 0, move_vector.y)).normalized()
+	
+	if camera_orientation:
+		velocity.x = camera_orientation.x * SPEED
+		velocity.z = camera_orientation.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	move_and_slide()
+	check_ray_collision()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
