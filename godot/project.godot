@@ -37,7 +37,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/character-controller/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/limbo_console/plugin.cfg", "res://addons/shaker/plugin.cfg")
+enabled=PackedStringArray("res://addons/character-controller/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/limbo_console/plugin.cfg", "res://addons/shaker/plugin.cfg")
 
 [file_customization]
 
@@ -138,6 +138,7 @@ change_mouse_input={
 [internationalization]
 
 locale/translations=PackedStringArray("res://i18n/translation.de.translation", "res://i18n/translation.en.translation")
+locale/translations_pot_files=PackedStringArray("res://resources/dialogos/principal.dialogue")
 
 [layer_names]
 
@@ -149,7 +150,7 @@ locale/translations=PackedStringArray("res://i18n/translation.de.translation", "
 3d_physics/layer_6="interactables"
 3d_physics/layer_7="grabbables"
 3d_physics/layer_8="bullets"
-3d_physics/layer_9="cards"
+3d_physics/layer_9="painting"
 3d_physics/layer_10="ladders"
 
 [rendering]

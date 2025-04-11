@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxo74iq1prr8o"]
+
+[ext_resource type="PackedScene" uid="uid://xqj7paqu50kj" path="res://scenes/fire_fx.tscn" id="1_uhm24"]
+
+[node name="LuzMala" type="Node3D"]
+
+[node name="FireFX" parent="." instance=ExtResource("1_uhm24")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.921609, 0.284033, 1.54018e-06, 1)
+light_energy = 3.205

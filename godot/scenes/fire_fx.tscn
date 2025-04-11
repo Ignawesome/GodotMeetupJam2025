@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://xqj7paqu50kj"]
+
+[ext_resource type="Shader" uid="uid://mblp10gi26yb" path="res://scripts/shaders/fire.tres" id="1_yuc24"]
+
+[sub_resource type="Gradient" id="Gradient_ijxlo"]
+colors = PackedColorArray(0.593538, 0.0132101, 0.131759, 1, 0.97, 0.41128, 0.0388, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ollb3"]
+gradient = SubResource("Gradient_ijxlo")
+fill_from = Vector2(0.322368, 0)
+fill_to = Vector2(1, 0.0559211)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ex1t"]
+render_priority = 0
+shader = ExtResource("1_yuc24")
+shader_parameter/Speed = 0.5
+shader_parameter/ColorGradient = SubResource("GradientTexture2D_ollb3")
+
+[sub_resource type="Curve" id="Curve_yuc24"]
+_limits = [0.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 2.84047), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ijxlo"]
+curve = SubResource("Curve_yuc24")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ollb3"]
+emission_shape_scale = Vector3(0.265, 0.615, 0.015)
+emission_shape = 1
+emission_sphere_radius = 1.4
+gravity = Vector3(0, 1, 0)
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_ijxlo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gbpqm"]
+size = Vector2(1.015, 1)
+
+[node name="FireFX" type="GPUParticles3D"]
+material_override = SubResource("ShaderMaterial_2ex1t")
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_ollb3")
+draw_pass_1 = SubResource("QuadMesh_gbpqm")
