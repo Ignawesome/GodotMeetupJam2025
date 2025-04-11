@@ -2,19 +2,19 @@
 
 [ext_resource type="Shader" uid="uid://mblp10gi26yb" path="res://scripts/shaders/fire.tres" id="1_yuc24"]
 
-[sub_resource type="Gradient" id="Gradient_ijxlo"]
-colors = PackedColorArray(0.593538, 0.0132101, 0.131759, 1, 0.97, 0.41128, 0.0388, 1)
+[sub_resource type="Gradient" id="Gradient_yuc24"]
+offsets = PackedFloat32Array(0.169231, 1)
+colors = PackedColorArray(0.432688, 0.811384, 0.718583, 1, 0.11, 0.525333, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ollb3"]
-gradient = SubResource("Gradient_ijxlo")
-fill_from = Vector2(0.322368, 0)
-fill_to = Vector2(1, 0.0559211)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ijxlo"]
+gradient = SubResource("Gradient_yuc24")
+fill_from = Vector2(0.222222, 0.0826211)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ex1t"]
 render_priority = 0
 shader = ExtResource("1_yuc24")
 shader_parameter/Speed = 0.5
-shader_parameter/ColorGradient = SubResource("GradientTexture2D_ollb3")
+shader_parameter/ColorGradient = SubResource("GradientTexture2D_ijxlo")
 
 [sub_resource type="Curve" id="Curve_yuc24"]
 _limits = [0.0, 10.0, 0.0, 1.0]

@@ -1,11 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxo74iq1prr8o"]
+[gd_scene load_steps=4 format=3 uid="uid://dxo74iq1prr8o"]
 
+[ext_resource type="Script" uid="uid://dot2fiy6k0m4q" path="res://scenes/luz_mala.gd" id="1_qc5ij"]
 [ext_resource type="PackedScene" uid="uid://xqj7paqu50kj" path="res://scenes/fire_fx.tscn" id="1_uhm24"]
 
-[node name="LuzMala" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_qc5ij"]
+radius = 1.01
+
+[node name="LuzMala" type="Area3D"]
+script = ExtResource("1_qc5ij")
 
 [node name="FireFX" parent="." instance=ExtResource("1_uhm24")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(0.921609, 0.284033, 1.54018e-06, 1)
+light_color = Color(0.0940396, 0.595489, 0.718896, 1)
 light_energy = 3.205
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qc5ij")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

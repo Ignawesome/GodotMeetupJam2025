@@ -34,6 +34,10 @@ func _ready():
 func _physics_process(delta):
 	var is_valid_input := Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	
+	if !Input.is_action_pressed("close_eyes") and eyes_are_closed:
+		open_eyes()
+	
+	
 	if is_valid_input:
 		if Input.is_action_just_pressed(input_fly_mode_action_name):
 			fly_ability.set_active(not fly_ability.is_actived())
@@ -50,11 +54,26 @@ func _physics_process(delta):
 		move(delta)
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	# Mouse look (only if the mouse is captured).
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_head(event.screen_relative)
+	if event.is_action("close_eyes"):
+		close_eyes()
+	
 
+@onready var eyelids: Eyelids = $Eyelids
+var eyes_are_closed: bool = false
+
+func close_eyes():
+	if eyes_are_closed:
+		return
+	eyes_are_closed = await eyelids.close_eyes()
+
+func open_eyes():
+	if !eyes_are_closed:
+		return
+	eyes_are_closed = !await eyelids.open_eyes()
 
 #func _on_controller_emerged():
 	#camera.environment = null

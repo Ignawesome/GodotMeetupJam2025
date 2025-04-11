@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1tjdipv5uytc"]
+[gd_scene load_steps=24 format=3 uid="uid://c1tjdipv5uytc"]
 
 [ext_resource type="Environment" uid="uid://b3cn01u84faiy" path="res://addons/character-controller/example/main/underwater.tres" id="2_8gmx1"]
 [ext_resource type="Script" uid="uid://b1l8cxk2wm3p1" path="res://addons/character-controller/example/main/player.gd" id="2_hajgj"]
@@ -14,16 +14,67 @@
 [ext_resource type="Script" uid="uid://dj8mdvjk8fldy" path="res://addons/character-controller/fps/bob/head_bob.gd" id="10_xfg1m"]
 [ext_resource type="Curve" path="res://addons/character-controller/fps/bob/bob_curve.tres" id="11_su4ve"]
 [ext_resource type="PackedScene" uid="uid://cxt4kxx6f5e4g" path="res://scripts/components/interact/ui/interactable_information.tscn" id="14_yno51"]
+[ext_resource type="Script" uid="uid://bo4osjnmcg16w" path="res://scenes/player/eyelids.gd" id="15_pftoh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fn1rj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_elntb"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_syv15"]
+
+[sub_resource type="Gradient" id="Gradient_rikpx"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.885845, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.319822, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ek6n8"]
+gradient = SubResource("Gradient_rikpx")
+fill_from = Vector2(0.467236, 0.51567)
+fill_to = Vector2(0.467236, 1)
+repeat = 2
+
+[sub_resource type="Animation" id="Animation_xfvir"]
+resource_name = "close_eyes"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:gradient:offsets")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedFloat32Array(0, 0.885845, 1), PackedFloat32Array(0, 0.00456621, 0.0228311)]
+}
+
+[sub_resource type="Animation" id="Animation_3cdrc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture:gradient:offsets")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedFloat32Array(0, 0.885845, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ydghr"]
+_data = {
+&"RESET": SubResource("Animation_3cdrc"),
+&"close_eyes": SubResource("Animation_xfvir")
+}
+
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.983497, 0)
 floor_snap_length = 0.5
 script = ExtResource("2_hajgj")
 underwater_env = ExtResource("2_8gmx1")
-abilities_path = Array[NodePath]([NodePath("Crouch Ability 3D"), NodePath("Sprint Ability 3D"), NodePath("Walk Ability 3D"), NodePath("Jump Ability 3D"), NodePath("Fly Ability 3D"), NodePath("Swim Ability 3D")])
+abilities_path = Array[NodePath]([NodePath("Crouch Ability 3D"), NodePath("Sprint Ability 3D"), NodePath("Walk Ability 3D")])
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fn1rj")
@@ -83,3 +134,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 [node name="Player Audios" parent="." instance=ExtResource("4_6saul")]
 
 [node name="InteractableInformation" parent="." instance=ExtResource("14_yno51")]
+
+[node name="Eyelids" type="CanvasLayer" parent="."]
+script = ExtResource("15_pftoh")
+
+[node name="ColorRect" type="ColorRect" parent="Eyelids"]
+visible = false
+material = SubResource("CanvasItemMaterial_syv15")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Eyelids"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ek6n8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Eyelids"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_ydghr")
+}
