@@ -14,6 +14,33 @@ const playing_cards_collision_layer: int = 256
 const ladders_collision_layer: int = 512
 #endregion
 
+#region Progress
+var obsidian_collected := false
+var letter_collected := false
+var horn_collected := false
+
+
+#endregion
+
+func _ready() -> void:
+	GlobalGameEvents.interactable_interacted.connect(_on_interactible_interacted)
+
+
+func _on_interactible_interacted(interactible: Interactable3D):
+	var title_upper := interactible.title.to_upper()
+	if title_upper == "OBSIDIAN":
+		obsidian_collected = true
+		interactible.queue_free()
+		return
+	elif title_upper == "LETTER":
+		letter_collected = true
+		interactible.queue_free()
+		return
+	elif title_upper == "HORN":
+		horn_collected = true
+		interactible.queue_free()
+		return
+
 
 #region General helpers
 ## Example with lambda -> Utilities.delay_func(func(): print("test"), 1.5)

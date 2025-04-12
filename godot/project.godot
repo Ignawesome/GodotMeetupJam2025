@@ -24,6 +24,7 @@ Shaker="*res://addons/shaker/src/Shaker.gd"
 GlobalGameEvents="*res://scripts/autoloads/global_game_events.gd"
 Preloader="*res://scripts/preloader.gd"
 GameGlobals="*res://scripts/autoloads/game_globals.gd"
+SceneTransitionManager="*res://scripts/autoloads/scenes/scene_transition_manager.tscn"
 
 [display]
 

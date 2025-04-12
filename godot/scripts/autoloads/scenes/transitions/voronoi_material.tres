@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bmqf281uyruhu"]
+
+[ext_resource type="Shader" uid="uid://cgi2bitvqwk7e" path="res://scripts/autoloads/scenes/transitions/shaders/vornoi_transition.gdshader" id="1_o2hbl"]
+
+[resource]
+shader = ExtResource("1_o2hbl")
+shader_parameter/threshold = 0.0
+shader_parameter/flip = false

@@ -60,6 +60,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotate_head(event.screen_relative)
 	if event.is_action("close_eyes"):
 		close_eyes()
+	if event.is_action_pressed("change_mouse_input"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
 	
 
 @onready var eyelids: Eyelids = $Eyelids

@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://b7w6o6b5oqcpy"]
+[gd_scene load_steps=8 format=4 uid="uid://b7w6o6b5oqcpy"]
 
 [ext_resource type="ArrayMesh" uid="uid://c5oxl50nioe33" path="res://assets/models/rocks/Rock_2.obj" id="1_oq75r"]
 [ext_resource type="Script" uid="uid://pehr8dumgm64" path="res://scripts/components/interact/interactables/interactable_3d.gd" id="2_r6ou3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2frqu"]
+radius = 0.861029
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gopai"]
 albedo_color = Color(0.17313, 0.0638, 0.29, 1)
@@ -25,27 +28,30 @@ _surfaces = [{
 emission_enabled = true
 emission = Color(0.495107, 0.0310067, 0.498017, 1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_2frqu"]
-radius = 0.861029
+[sub_resource type="SphereShape3D" id="SphereShape3D_oq75r"]
 
-[node name="Obsidian" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_oq75r")
-surface_material_override/0 = SubResource("StandardMaterial3D_gopai")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-visibility_range_end = 15.0
-mesh = SubResource("ArrayMesh_0qjtl")
-surface_material_override/0 = SubResource("StandardMaterial3D_m2kbi")
-
-[node name="Interactable3D" type="Area3D" parent="."]
+[node name="Obsidian" type="Area3D"]
 script = ExtResource("2_r6ou3")
-title = "Obsidian"
+title = "OBSIDIAN"
 description = "This is an obsidian rock"
 title_translation_key = "OBSIDIAN ROCK"
 metadata/_custom_type_script = "uid://pehr8dumgm64"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385828, 0)
 shape = SubResource("SphereShape3D_2frqu")
+
+[node name="Obsidian" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obsidian"]
+mesh = ExtResource("1_oq75r")
+surface_material_override/0 = SubResource("StandardMaterial3D_gopai")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obsidian/MeshInstance3D"]
+visibility_range_end = 15.0
+mesh = SubResource("ArrayMesh_0qjtl")
+surface_material_override/0 = SubResource("StandardMaterial3D_m2kbi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obsidian"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352635, 0)
+shape = SubResource("SphereShape3D_oq75r")

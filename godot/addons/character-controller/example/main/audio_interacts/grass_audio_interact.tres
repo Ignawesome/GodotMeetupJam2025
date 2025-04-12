@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="AudioInteract" load_steps=9 format=3 uid="uid://boafje76qrf27"]
+[gd_resource type="Resource" script_class="AudioInteract" load_steps=8 format=3 uid="uid://boafje76qrf27"]
 
 [ext_resource type="Script" uid="uid://b3803ujrtwrim" path="res://addons/character-controller/example/main/audios/audio_interact.gd" id="1_h7qps"]
-[ext_resource type="AudioStream" uid="uid://3fyqdimpwxn2" path="res://assets/sfx/footsteps/Grass/Jump Step Grass A.ogg" id="1_xlgoc"]
 [ext_resource type="AudioStream" uid="uid://bjdu84b3j64pn" path="res://assets/sfx/footsteps/Grass/Land Step Grass A.ogg" id="2_htnw6"]
 [ext_resource type="AudioStream" uid="uid://ci3vgl18p86yo" path="res://assets/sfx/footsteps/Grass/Shoe Step Grass Medium A.ogg" id="4_xcmc3"]
 [ext_resource type="AudioStream" uid="uid://h25slqdomool" path="res://assets/sfx/footsteps/Grass/Shoe Step Grass Medium B.ogg" id="5_22snr"]
@@ -11,6 +10,5 @@
 
 [resource]
 script = ExtResource("1_h7qps")
-jump_audio = ExtResource("1_xlgoc")
 landed_audio = ExtResource("2_htnw6")
 step_audios = Array[AudioStream]([ExtResource("4_xcmc3"), ExtResource("5_22snr"), ExtResource("6_cd07m"), ExtResource("7_6rx6n"), ExtResource("8_s3371")])

@@ -1,0 +1,18 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://c4hb6phnrm60o"]
+
+[ext_resource type="Material" uid="uid://ca4h2j754d03l" path="res://scenes/environments/night_sky_material.tres" id="1_p5kfr"]
+
+[sub_resource type="Sky" id="Sky_pjb6r"]
+sky_material = ExtResource("1_p5kfr")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_pjb6r")
+tonemap_mode = 4
+fog_enabled = true
+fog_light_energy = 0.6
+fog_sun_scatter = 0.1
+fog_sky_affect = 0.016
+fog_height = 2.0
+fog_height_density = 0.2
+volumetric_fog_sky_affect = 0.185
