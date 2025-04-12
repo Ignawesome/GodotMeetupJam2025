@@ -1,0 +1,114 @@
+{
+	"categories": [
+		{
+			"uuid": "0f492f14-b975-484f-a850-f13787a36309",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "3c634445-c7ed-49cc-b3fb-9a1f59892b63",
+			"title": "Todo",
+			"tasks": [
+				"e51e5d45-3327-4f57-bcbb-f393280fba10",
+				"61507b6c-0a85-4859-a11d-e44c8b48be4c",
+				"e608164d-0967-4987-b065-5e73f3210047",
+				"7c9a90ff-e05b-47cc-ae82-546bfef8df91",
+				"c94a9d12-8dce-41aa-9a27-acc923f4b881",
+				"9f214367-8abb-41bb-9965-d23871b9e130",
+				"50a0d4e0-c6a5-4f76-94ea-593d6505db49",
+				"d7f214f5-9987-4d4f-ba89-68ba03eba3ee",
+				"36c75df4-ef84-4519-a8d1-28261b57b01f"
+			]
+		},
+		{
+			"uuid": "021bdf57-b55f-45f1-94ab-13efb4c9aa1f",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "0536b735-393e-48af-9a27-72b60cf6bb63",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "e51e5d45-3327-4f57-bcbb-f393280fba10",
+			"title": "Agregar audio a la luz",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "61507b6c-0a85-4859-a11d-e44c8b48be4c",
+			"title": "Hacer una pequeña intro",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "e608164d-0967-4987-b065-5e73f3210047",
+			"title": "Armar un laberinto",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "7c9a90ff-e05b-47cc-ae82-546bfef8df91",
+			"title": "Conseguir assets para recolectar",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "c94a9d12-8dce-41aa-9a27-acc923f4b881",
+			"title": "Armar sistema de dialogo al tocar objetos",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "9f214367-8abb-41bb-9965-d23871b9e130",
+			"title": "Conectar la condicion de perder",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "50a0d4e0-c6a5-4f76-94ea-593d6505db49",
+			"title": "Hacer menu de game over",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "d7f214f5-9987-4d4f-ba89-68ba03eba3ee",
+			"title": "Hacer menu de ganar",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		},
+		{
+			"uuid": "36c75df4-ef84-4519-a8d1-28261b57b01f",
+			"title": "Plasmar dialogos del documento",
+			"description": "",
+			"category": "0f492f14-b975-484f-a850-f13787a36309",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"3c634445-c7ed-49cc-b3fb-9a1f59892b63"
+			],
+			[
+				"021bdf57-b55f-45f1-94ab-13efb4c9aa1f"
+			],
+			[
+				"0536b735-393e-48af-9a27-72b60cf6bb63"
+			]
+		]
+	}
+}

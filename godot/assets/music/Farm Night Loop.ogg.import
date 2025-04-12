@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bedyvo3u433t1"
+path="res://.godot/imported/Farm Night Loop.ogg-445654bf9dab9dfe7e33032e5562b72b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Farm Night Loop.ogg"
+dest_files=["res://.godot/imported/Farm Night Loop.ogg-445654bf9dab9dfe7e33032e5562b72b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c50k6x12gyawg"]
+
+[ext_resource type="Texture2D" uid="uid://e3q6b55ypl3r" path="res://assets/images/Seamless-Black-Asphalt-Road-Texture.jpg" id="1_3blnt"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nu4rv"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilwbs"]
+albedo_texture = ExtResource("1_3blnt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qixua"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_nu4rv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ilwbs")
+mesh = SubResource("PlaneMesh_qixua")
+skeleton = NodePath("")
