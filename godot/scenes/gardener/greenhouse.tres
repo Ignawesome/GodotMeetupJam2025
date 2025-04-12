@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6btkf1v8d8pn" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_LOD_variant.gd" id="1_qjx0i"]
 [ext_resource type="Script" uid="uid://cjsirac1827tg" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse.gd" id="1_ufr7w"]
-[ext_resource type="PackedScene" uid="uid://cgiy6nu3w3l0k" path="res://scenes/pino.tscn" id="2_yh3gy"]
+[ext_resource type="PackedScene" uid="uid://cgiy6nu3w3l0k" path="res://scenes/elements/pino.tscn" id="2_yh3gy"]
 [ext_resource type="Script" uid="uid://bnsd2fyntembv" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_plant.gd" id="3_usyf5"]
 [ext_resource type="Script" uid="uid://ckg16wf0ebcts" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_plant_state.gd" id="4_wnhwb"]
 [ext_resource type="ArrayMesh" uid="uid://cj77ji8hhgno8" path="res://assets/models/plants/plants_SM_Grass02_001.res" id="5_jsmnu"]

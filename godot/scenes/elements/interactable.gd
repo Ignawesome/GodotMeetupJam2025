@@ -19,11 +19,12 @@ func enable_interaction():
 
 func disable_interaction():
 	interaction_enabled = false
+	$CollisionShape3D.disabled = true
 
 func handle_interaction():
-	emit_signal('interaction')
 	if (interaction_enabled):
 		display_message()
+		emit_signal('interaction')
 	else:
 		hide_message()
 	

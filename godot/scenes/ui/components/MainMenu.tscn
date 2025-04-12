@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://v5lwto3kifoo"]
+[gd_scene load_steps=6 format=3 uid="uid://v5lwto3kifoo"]
 
 [ext_resource type="Texture2D" uid="uid://dojb2emq2p7uf" path="res://assets/images/photo_2025-04-12_07-44-56.jpg" id="1_84r03"]
 [ext_resource type="Script" uid="uid://bgd0csjya4onj" path="res://scenes/ui/components/main_menu.gd" id="1_lrhyv"]
 [ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="2_lrhyv"]
+[ext_resource type="AudioStream" uid="uid://ery4peqk8vl0" path="res://assets/music/Swamp Fever.mp3" id="4_7b3o0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7b3o0"]
 font = ExtResource("2_lrhyv")
@@ -75,6 +76,14 @@ offset_right = 97.0
 offset_bottom = 705.0
 text = "Créditos"
 
+[node name="MusicButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 674.0
+offset_right = 536.0
+offset_bottom = 705.0
+text = "Música On/Off"
+
 [node name="Credits" type="RichTextLabel" parent="."]
 visible = false
 layout_mode = 0
@@ -82,15 +91,41 @@ offset_left = 560.0
 offset_top = 97.0
 offset_right = 1278.0
 offset_bottom = 724.0
-text = "UNQJAM 2025 - Grupo 3
+text = "UNQJAM 2025 - La Brasa De Los Muertos
+
+
+
+Proyecto colaborativo de la mano de:
+Sebastián 
+Tomás 
+Enrique 
+Ivan 
+Lucas 
+Andrés 
+Dora 
+Ignacio 
+Charlie 
+Sebastián
 
 Créditos:
 
-Integrantes del Equipo:
+Texturas del juego utilizadas bajo la licencia de libre uso
+Imágenes de fondo cortesía del equipo de diseño
+Sonidos y BGM utilizados bajo licencia de libre uso
+Música del menú: Swamp Fever - L4D2
+
+
+
 
 "
 horizontal_alignment = 1
 
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7b3o0")
+volume_db = -15.0
+autoplay = true
+
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Buttons/MusicButton" to="." method="_on_music_button_pressed"]

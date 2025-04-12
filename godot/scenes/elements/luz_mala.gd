@@ -13,6 +13,9 @@ var distance_to_player := 999.
 
 signal reached_player
 
+func set_player(player: Node3D):
+	player = player
+
 func _process(delta: float) -> void:
 	
 	emit_sound()

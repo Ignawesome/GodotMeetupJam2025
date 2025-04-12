@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxo74iq1prr8o"]
 
-[ext_resource type="Script" uid="uid://dot2fiy6k0m4q" path="res://scenes/luz_mala.gd" id="1_qc5ij"]
+[ext_resource type="Script" uid="uid://dot2fiy6k0m4q" path="res://scenes/elements/luz_mala.gd" id="1_qc5ij"]
 [ext_resource type="PackedScene" uid="uid://xqj7paqu50kj" path="res://scenes/fire_fx.tscn" id="1_uhm24"]
 [ext_resource type="AudioStream" uid="uid://cfe7np0ejvja0" path="res://assets/sfx/Winter winds whistle sound effect.mp3" id="3_m4rif"]
 
