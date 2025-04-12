@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxo74iq1prr8o"]
+[gd_scene load_steps=6 format=3 uid="uid://dxo74iq1prr8o"]
 
 [ext_resource type="Script" uid="uid://dot2fiy6k0m4q" path="res://scenes/luz_mala.gd" id="1_qc5ij"]
 [ext_resource type="PackedScene" uid="uid://xqj7paqu50kj" path="res://scenes/fire_fx.tscn" id="1_uhm24"]
+[ext_resource type="AudioStream" uid="uid://cfe7np0ejvja0" path="res://scenes/Winter winds whistle sound effect.mp3" id="3_m4rif"]
+[ext_resource type="AudioStream" uid="uid://bo0l1qt1kj8v8" path="res://scenes/Whistling Melody Sound Effect.mp3" id="4_eyowq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qc5ij"]
 radius = 1.01
@@ -17,5 +19,12 @@ light_energy = 3.205
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_qc5ij")
+
+[node name="WhistleClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m4rif")
+
+[node name="WhistleFar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eyowq")
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

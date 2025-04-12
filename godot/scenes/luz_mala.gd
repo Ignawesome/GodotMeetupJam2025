@@ -7,11 +7,16 @@ extends Area3D
 @export var escape_speed := 4.0
 
 var distance_to_player := 999.
+@onready var whistle_close = $WhistleClose
+@onready var whistle_far = $WhistleFar
+
 
 signal reached_player
 
-
 func _process(delta: float) -> void:
+	
+	emit_sound()
+	
 	if is_instance_valid(player):
 		var player_location = player.global_position
 		player_location.y += 0.7
@@ -30,3 +35,10 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		reached_player.emit()
+
+func emit_sound() -> void:
+	#Emite un sonido bajo si está cerca y un sonido alto si está lejos.
+	if(distance_to_player <= 100):
+		whistle_close.play()
+	else:
+		whistle_far.play()
