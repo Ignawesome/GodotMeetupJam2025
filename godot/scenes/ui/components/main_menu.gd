@@ -32,3 +32,7 @@ func _on_instruction_button_pressed() -> void:
 
 func _on_texture_button_pressed() -> void:
 	instrucciones.hide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and instrucciones.visible:
+		instrucciones.hide()

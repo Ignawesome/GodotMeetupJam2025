@@ -6,6 +6,10 @@ var laberinto = preload("res://scenes/elements/laberinto_scene.tscn")
 var level_two = preload("res://scenes/elements/LevelTwo.tscn")
 var current_level = null
 
+
+func _ready() -> void:
+	GlobalGameEvents.request_retry.connect(loadFirstLevel)
+
 func _process(delta: float) -> void:
 	
 	if($Level.get_child_count() > 0):
@@ -33,6 +37,9 @@ func skip_intro() -> void:
 
 func loadFirstLevel() -> void:
 	var laberinto = load("res://scenes/elements/laberinto_scene.tscn")
+	
+	get_node("Level").remove_child(current_level)
+		
 	get_node("Level").add_child(laberinto.instantiate())
 	
 	current_level = get_node('Level/LaberintoScene')
@@ -67,6 +74,21 @@ func _on_pause_menu_quit_game() -> void:
 	$MainMenu.open()
 	get_node('Level').remove_child(current_level)
 	get_tree().paused = false
+
+func _on_retry() -> void:
+	var laberinto = load("res://scenes/elements/laberinto_scene.tscn")
+	get_node("Level").get_child(0).queue_free()
+	get_node("Level").add_child(laberinto.instantiate())
+	
+	current_level = get_node('Level/LaberintoScene')	
+	get_node('Level/LaberintoScene').connect('obsidian_get', _on_obsidian_get)
+	get_node('Level/LaberintoScene').connect('next_level', _on_laberinto_next_level)
+
+
+func _on_game_over_return_to_menu() -> void:
+	const MAIN_GAME = ("res://scenes/MainGame.tscn")
+	get_tree().change_scene_to_file(MAIN_GAME)
+	
 
 func _on_intro_finished() -> void:
 	skip_intro()

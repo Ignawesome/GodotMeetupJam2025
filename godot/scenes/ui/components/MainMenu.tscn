@@ -1397,6 +1397,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -1539,6 +1540,7 @@ texture = ExtResource("9_h431n")
 expand_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Mirar"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("10_2xw2p")
 expand_mode = 3
@@ -1633,7 +1635,7 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Cerrar Ojos"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Cerrar Ojos (mantener):"
+text = "Cerrar Ojos:"
 label_settings = SubResource("LabelSettings_8dpbt")
 
 [node name="Control" type="Control" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Cerrar Ojos"]
@@ -1642,6 +1644,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.39
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Cerrar Ojos"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("11_ja6t7")
 expand_mode = 3
@@ -1650,6 +1653,16 @@ stretch_mode = 5
 [node name="Control2" type="Control" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Cerrar Ojos"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Cerrar Ojos2" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Cerrar Ojos2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "(mantener para ahuyentar la luz)"
+label_settings = SubResource("LabelSettings_8dpbt")
 
 [node name="Control" type="Control" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

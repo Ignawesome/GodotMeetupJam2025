@@ -3,8 +3,10 @@ extends Node3D
 signal next_level
 signal obsidian_get
 
+@onready var luz_mala: LuzMala = $LuzMala
+
 func _ready() -> void:
-	$LuzMala.set_player($Player)
+	luz_mala.set_player($Player)
 
 func _on_level_transition_body_entered(body: Node3D) -> void:
 	if(body.get_name() == 'Player'):

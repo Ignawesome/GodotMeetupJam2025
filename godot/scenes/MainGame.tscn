@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c44ba86wa1n"]
+[gd_scene load_steps=5 format=3 uid="uid://c44ba86wa1n"]
 
 [ext_resource type="Script" uid="uid://rmdj655oow8x" path="res://scenes/main_game.gd" id="1_hat22"]
 [ext_resource type="PackedScene" uid="uid://v5lwto3kifoo" path="res://scenes/ui/components/MainMenu.tscn" id="2_xej52"]
 [ext_resource type="PackedScene" uid="uid://mmkn1odmfgem" path="res://scenes/ui/PauseMenu.tscn" id="3_p73vr"]
+[ext_resource type="PackedScene" uid="uid://cd5n1lrsbkryj" path="res://scenes/game_over.tscn" id="4_t4bxf"]
 
 [node name="MainGame" type="Node3D"]
 process_mode = 3
@@ -15,6 +16,9 @@ process_mode = 1
 visible = false
 
 [node name="MainMenu" parent="." instance=ExtResource("2_xej52")]
+
+[node name="GameOver" parent="." instance=ExtResource("4_t4bxf")]
+visible = false
 
 [connection signal="quit_game" from="PauseMenu" to="." method="_on_pause_menu_quit_game"]
 [connection signal="resume_game" from="PauseMenu" to="." method="_on_pause_menu_resume_game"]

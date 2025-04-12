@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd5n1lrsbkryj"]
+
+[ext_resource type="Texture2D" uid="uid://b8sbtm7bukgr" path="res://assets/ui/DERROTA/Fondo Sangre.png" id="1_7m3ot"]
+[ext_resource type="Script" uid="uid://w8ec7wsrfwau" path="res://scenes/game_over.gd" id="1_v3hpu"]
+[ext_resource type="Texture2D" uid="uid://brqqmnmla4o5p" path="res://assets/ui/DERROTA/Derrota_txt.png" id="2_v3hpu"]
+[ext_resource type="AudioStream" uid="uid://cpcyda3i4piw8" path="res://assets/ui/DERROTA/Sonido.wav" id="3_irg28"]
+[ext_resource type="Texture2D" uid="uid://b3vql2m53f0ff" path="res://assets/ui/DERROTA/Botones.png" id="4_2jtsn"]
+[ext_resource type="Texture2D" uid="uid://cfyid82b25tb" path="res://assets/ui/DERROTA/Icono.png" id="5_8bugq"]
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="GameOver" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3hpu")
+
+[node name="TextureRect" type="TextureRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7m3ot")
+
+[node name="DerrotaTxt" type="Sprite2D" parent="GameOver"]
+position = Vector2(665, 366)
+texture = ExtResource("2_v3hpu")
+
+[node name="Sonido" type="AudioStreamPlayer" parent="GameOver"]
+stream = ExtResource("3_irg28")
+
+[node name="Botones" type="Sprite2D" parent="GameOver"]
+position = Vector2(682, 268)
+texture = ExtResource("4_2jtsn")
+
+[node name="Icono" type="Sprite2D" parent="GameOver"]
+position = Vector2(894, 367)
+texture = ExtResource("5_8bugq")
+
+[node name="ReintentarButton" type="Button" parent="GameOver"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 217.0
+offset_top = 475.0
+offset_right = 517.0
+offset_bottom = 525.0
+theme_override_font_sizes/font_size = 30
+text = "REINTENTAR"
+flat = true
+
+[node name="MenuButton" type="Button" parent="GameOver"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 0
+offset_left = 840.0
+offset_top = 475.0
+offset_right = 1140.0
+offset_bottom = 525.0
+theme_override_font_sizes/font_size = 30
+text = "MENU PRINCIPAL"
+flat = true
+
+[connection signal="pressed" from="GameOver/ReintentarButton" to="GameOver" method="_on_reintentar_button_pressed"]
+[connection signal="pressed" from="GameOver/MenuButton" to="GameOver" method="_on_menu_button_pressed"]

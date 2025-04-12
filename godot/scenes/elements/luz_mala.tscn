@@ -6,10 +6,13 @@
 [ext_resource type="AudioStream" uid="uid://bo0l1qt1kj8v8" path="res://assets/sfx/Whistling Melody Sound Effect.mp3" id="4_wouux"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qc5ij"]
-radius = 1.01
+radius = 0.3
 
 [node name="LuzMala" type="Area3D"]
+collision_mask = 3
 script = ExtResource("1_qc5ij")
+speed = 4.0
+escape_speed = 10.0
 
 [node name="FireFX" parent="." instance=ExtResource("1_uhm24")]
 

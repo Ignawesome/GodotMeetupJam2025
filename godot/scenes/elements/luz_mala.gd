@@ -15,7 +15,7 @@ signal reached_player
 
 func _ready():
 	#Sonido por defecto
-	#whistle_far.play()
+	whistle_far.play()
 	#whistle_close.play()
 	pass
 	
@@ -43,7 +43,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if (body.get_name() == 'Player'):
-		reached_player.emit()
+		GlobalGameEvents.luz_reached_player.emit()
+		#reached_player.emit()
 
 func emit_sound() -> void:
 	#Emite un sonido bajo si está cerca y un sonido alto si está lejos.

@@ -18,6 +18,8 @@ signal canceled_interactable_scan(interactable: Interactable3D)
 
 #endregion
 
+signal luz_reached_player
+signal request_retry
 
 #region Narrative
 #signal dialogues_requested(dialogue_blocks: Array[DialogueDisplayer.DialogueBlock])
