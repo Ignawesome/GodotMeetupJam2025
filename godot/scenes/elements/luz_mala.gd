@@ -1,17 +1,22 @@
 class_name LuzMala
 extends Area3D
 
-var player = null
+@export var player: Node3D
 @export var is_pursuing := false
 @export var speed := 2.0
 @export var escape_speed := 4.0
 
 var distance_to_player := 999.
-#@onready var whistle_close = $WhistleClose
+@onready var whistle_close = $WhistleClose
 @onready var whistle_far = $WhistleFar
 
 
 signal reached_player
+
+func _ready():
+	#Sonido por defecto
+	whistle_far.play()
+	whistle_close.play()
 
 func set_player(player: Node3D):
 	player = player
@@ -41,7 +46,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func emit_sound() -> void:
 	#Emite un sonido bajo si está cerca y un sonido alto si está lejos.
-	if(distance_to_player <= 100):
-		whistle_far.play()
-	#else:
-		#whistle_far.play()
+	if(distance_to_player <= 150):
+		whistle_close.volume_db = -14.0
+	else:
+		whistle_close.volume_db = -3.0
