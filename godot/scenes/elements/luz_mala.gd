@@ -15,9 +15,10 @@ signal reached_player
 
 func _ready():
 	#Sonido por defecto
-	whistle_far.play()
-	whistle_close.play()
-
+	#whistle_far.play()
+	#whistle_close.play()
+	pass
+	
 func set_player(player: Node3D):
 	player = player
 

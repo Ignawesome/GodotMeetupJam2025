@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bttevbhap3g3e"]
+
+[ext_resource type="Texture2D" uid="uid://dl2b8ggu0lrfn" path="res://assets/images/Talisman_de_Agua.png" id="1_24pas"]
+
+[node name="MedallonAgua" type="Sprite3D"]
+transform = Transform3D(0.0632178, 0, 0, 0, 0.0632178, 0, 0, 0, 0.0632178, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_24pas")

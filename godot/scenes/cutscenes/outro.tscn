@@ -1,0 +1,346 @@
+[gd_scene load_steps=26 format=3 uid="uid://b5s7lj42ubbxo"]
+
+[ext_resource type="Script" uid="uid://3dvc8qmmd8k4" path="res://scenes/cutscenes/intro.gd" id="1_fiv6e"]
+[ext_resource type="PackedScene" uid="uid://dxkukrtb3lwmq" path="res://assets/models/trees/FBX/DeadTree_4.fbx" id="2_v5cd1"]
+[ext_resource type="PackedScene" uid="uid://ctggcktvrvgwi" path="res://assets/models/trees/FBX/DeadTree_2.fbx" id="3_q5yro"]
+[ext_resource type="PackedScene" uid="uid://dxo74iq1prr8o" path="res://scenes/elements/luz_mala.tscn" id="3_wubr3"]
+[ext_resource type="FontFile" uid="uid://le2vdo2626vw" path="res://assets/fonts/Montserrat-Medium.ttf" id="4_2oajq"]
+[ext_resource type="PackedScene" uid="uid://wmhieiogw7g2" path="res://assets/models/trees/FBX/DeadTree_3.fbx" id="4_q5fv8"]
+[ext_resource type="PackedScene" uid="uid://ccmfbj5njolia" path="res://assets/models/trees/FBX/DeadTree_1.fbx" id="5_b56jv"]
+[ext_resource type="AudioStream" uid="uid://cws1s3jhtf05t" path="res://assets/sfx/Grillos.mp3" id="5_hoakb"]
+[ext_resource type="PackedScene" uid="uid://lv8k43t6xmf5" path="res://assets/models/trees/FBX/DeadTree_10.fbx" id="6_n6ce1"]
+[ext_resource type="PackedScene" uid="uid://sw7pcibwq5x8" path="res://assets/models/trees/FBX/Pine_1.fbx" id="7_o0wab"]
+[ext_resource type="PackedScene" uid="uid://bckkn3nygvqwp" path="res://scenes/environments/pared.tscn" id="8_8wcab"]
+[ext_resource type="PackedScene" uid="uid://dytmtt16ar1or" path="res://assets/models/trees/FBX/Birch_2.fbx" id="9_hs4wi"]
+[ext_resource type="PackedScene" uid="uid://cau44lckqoskn" path="res://scenes/elements/Pastizal.tscn" id="10_bjo5r"]
+[ext_resource type="PackedScene" uid="uid://xredo03yxmvl" path="res://scenes/elements/road.tscn" id="14_sc15g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j2aof"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_sfudp"]
+sky_material = SubResource("ProceduralSkyMaterial_j2aof")
+
+[sub_resource type="Environment" id="Environment_lngun"]
+background_mode = 1
+sky = SubResource("Sky_sfudp")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.214139, 0.235722, 0.269651, 1)
+fog_light_energy = 0.66
+fog_density = 0.0552
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7jo3"]
+albedo_color = Color(0, 0.125881, 4.21144e-08, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7jo3"]
+line_spacing = 30.0
+font = ExtResource("4_2oajq")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_fqeff"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:line_spacing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [30.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sfudp"]
+resource_name = "fade_in"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:line_spacing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [30.0, 100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 17, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_hoakb")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_hoakb")
+}],
+"times": PackedFloat32Array(0.0333333, 9.86667)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7jo3"]
+_data = {
+&"RESET": SubResource("Animation_fqeff"),
+&"fade_in": SubResource("Animation_sfudp")
+}
+
+[sub_resource type="Animation" id="Animation_j2aof"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-11.1874, 1.43324, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.16993, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8wuh6"]
+resource_name = "camera_pan"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.99, 8, 13, 16.5, 18, 19.9945),
+"transitions": PackedFloat32Array(1.8025, 0.329877, 1, 1.51572, 1.86607, 0.435275, 0.366022),
+"update": 0,
+"values": [Vector3(-9.63096, 1.43324, -7.90211), Vector3(-11.1874, 1.43324, 3.1364), Vector3(-8.23329, 1.43324, 5.74268), Vector3(-5.60305, 1.43324, 5.74268), Vector3(-3.84396, 1.43324, -2.62709), Vector3(-0.805099, 0.851914, -4.35369), Vector3(4.46971, 0.99807, -3.71818)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.99, 8, 13, 16.5, 18, 19.9945),
+"transitions": PackedFloat32Array(1.93187, 0.420448, 1, 1.7411, 1.41421, 0.353554, 2.63902),
+"update": 0,
+"values": [Vector3(0, -2.15597, 0), Vector3(0, -1.30072, 0), Vector3(0, -1.08811, 0), Vector3(0, -0.54765, 0), Vector3(0, -1.80977, 0), Vector3(0, -1.92327, 0), Vector3(0, -1.55614, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sfudp"]
+_data = {
+&"RESET": SubResource("Animation_j2aof"),
+&"camera_pan": SubResource("Animation_8wuh6")
+}
+
+[node name="Outro" type="Node3D"]
+script = ExtResource("1_fiv6e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lngun")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 6, 0)
+light_color = Color(0.309102, 0.329531, 0.46575, 1)
+light_energy = 0.02
+light_volumetric_fog_energy = 20.0
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.254395, 0)
+size = Vector3(19, 0.491211, 19)
+material = SubResource("StandardMaterial3D_p7jo3")
+
+[node name="Arboles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.721859, 0)
+
+[node name="DeadTree_4" parent="Arboles" instance=ExtResource("2_v5cd1")]
+
+[node name="DeadTree_7" parent="Arboles" instance=ExtResource("2_v5cd1")]
+transform = Transform3D(1, 0, 0, 0, 0.989883, 0.141886, 0, -0.141886, 0.989883, 0, -0.394881, -7)
+
+[node name="DeadTree_2" parent="Arboles" instance=ExtResource("3_q5yro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="DeadTree_6" parent="Arboles" instance=ExtResource("3_q5yro")]
+transform = Transform3D(1, 0, 0, 0, 0.961238, -0.275721, 0, 0.275721, 0.961238, 0, 0, -1)
+
+[node name="DeadTree_3" parent="Arboles" instance=ExtResource("4_q5fv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="DeadTree_5" parent="Arboles" instance=ExtResource("4_q5fv8")]
+transform = Transform3D(-0.123324, 0, 0.992366, 0, 1, 0, -0.992366, 0, -0.123324, 0, 0, -3)
+
+[node name="DeadTree_1" parent="Arboles" instance=ExtResource("5_b56jv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="DeadTree_10" parent="Arboles" instance=ExtResource("6_n6ce1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="DeadTree_11" parent="Arboles" instance=ExtResource("6_n6ce1")]
+transform = Transform3D(0.951492, 0, 0.307672, 0, 1, 0, -0.307672, 0, 0.951492, 0, 0, 1)
+
+[node name="DeadTree_12" parent="Arboles" instance=ExtResource("6_n6ce1")]
+transform = Transform3D(-0.0509241, 0, 0.998703, 0.499351, 0.866025, 0.025462, -0.864902, 0.5, -0.0441015, 0, -0.483865, -8.7511)
+
+[node name="Pine_1" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Pine_2" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="Pine_3" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -5)
+
+[node name="Pine_4" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)
+
+[node name="Pine_5" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -9)
+
+[node name="Pine_6" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -7)
+
+[node name="Pine_7" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -2)
+
+[node name="Pine_8" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="Pine_9" parent="Arboles" instance=ExtResource("7_o0wab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="Pared" parent="Arboles" instance=ExtResource("8_8wcab")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 2, -7)
+
+[node name="Pared2" parent="Arboles" instance=ExtResource("8_8wcab")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 2, 0)
+
+[node name="Pared3" parent="Arboles" instance=ExtResource("8_8wcab")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 2, 5)
+
+[node name="Pared4" parent="Arboles" instance=ExtResource("8_8wcab")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.4952, 2, -2.3883)
+
+[node name="Pared5" parent="Arboles" instance=ExtResource("8_8wcab")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.4952, 2, -4.68366)
+
+[node name="Birch_2" parent="Arboles" instance=ExtResource("9_hs4wi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8228, -8.24291, -2.82166)
+
+[node name="Pastizal" parent="Arboles" instance=ExtResource("10_bjo5r")]
+transform = Transform3D(0.441381, 0, 0.89732, 0, 1, 0, -0.89732, 0, 0.441381, 14.5705, 0.979988, -3.64834)
+
+[node name="Pastizal2" parent="Arboles" instance=ExtResource("10_bjo5r")]
+transform = Transform3D(-0.476238, 0, 0.879316, 0, 1, 0, -0.879316, 0, -0.476238, 11.4283, 0.979988, -5.05372)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.390216, 0, -0.920723, 0, 1, 0, 0.920723, 0, 0.390216, -11.1874, 1.43324, 0)
+
+[node name="LuzMala" parent="." instance=ExtResource("3_wubr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9665, 0.655674, -3.65225)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+text = "“Dicen los viejos que, en la pampa, cuando la luna no alumbra, 
+hay que andar con cuidado. 
+Que, si una luz se te cruza, no corras. 
+Rezá. Cerrá los ojos. Porque si la mirás… te lleva.”"
+label_settings = SubResource("LabelSettings_p7jo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p7jo3")
+}
+
+[node name="CameraAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sfudp")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Road" parent="." instance=ExtResource("14_sc15g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40954, 0.0293018, -9.54639)
+
+[connection signal="animation_finished" from="TextAnimation" to="." method="_on_text_animation_animation_finished"]

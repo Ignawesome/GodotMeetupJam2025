@@ -3,6 +3,8 @@ extends Control
 signal quit_game
 signal play_game
 
+@onready var instrucciones: CanvasLayer = $CanvasLayer
+
 func open() -> void:
 	$MenuMusic.play()
 	self.show()
@@ -22,3 +24,11 @@ func _on_quit_button_pressed() -> void:
 
 func _on_music_button_pressed() -> void:
 	$MenuMusic.stream_paused = !$MenuMusic.stream_paused
+
+
+func _on_instruction_button_pressed() -> void:
+	instrucciones.show()
+
+
+func _on_texture_button_pressed() -> void:
+	instrucciones.hide()
