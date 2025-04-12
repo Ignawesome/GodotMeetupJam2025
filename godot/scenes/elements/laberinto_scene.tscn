@@ -1,4 +1,4 @@
-[gd_scene load_steps=1157 format=3 uid="uid://efk1f18opcab"]
+[gd_scene load_steps=1156 format=3 uid="uid://efk1f18opcab"]
 
 [ext_resource type="Shader" uid="uid://byo8l8opsy0ej" path="res://scripts/shaders/fractal_texture.gdshader" id="1_embvx"]
 [ext_resource type="Environment" uid="uid://c4hb6phnrm60o" path="res://resources/night_environment.tres" id="1_rlg1h"]
@@ -10,13 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://d15c8efq5ixob" path="res://scenes/environments/conexion_t.tscn" id="7_akn11"]
 [ext_resource type="PackedScene" uid="uid://d3uwy73cbq3q2" path="res://scenes/environments/cross.tscn" id="8_gwxdx"]
 [ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="10_gwxdx"]
-[ext_resource type="PackedScene" uid="uid://c1tjdipv5uytc" path="res://scenes/player/player_custom.tscn" id="10_m15e3"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="11_m6gk5"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="12_h23jp"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="13_m15e3"]
-[ext_resource type="PackedScene" uid="uid://gddtu8ikup42" path="res://scenes/elements/scene_change_trigger.tscn" id="15_h23jp"]
-[ext_resource type="PackedScene" uid="uid://dp21lwyd7ektd" path="res://scenes/environments/road_scene.tscn" id="16_m15e3"]
-[ext_resource type="PackedScene" uid="uid://b7w6o6b5oqcpy" path="res://scenes/elements/obsidian.tscn" id="17_bjfrv"]
+[ext_resource type="PackedScene" uid="uid://ct4be5ugc2yn" path="res://scenes/elements/Interactable.tscn" id="15_m15e3"]
+[ext_resource type="PackedScene" uid="uid://b7w6o6b5oqcpy" path="res://scenes/elements/obsidian.tscn" id="16_bjfrv"]
+[ext_resource type="PackedScene" uid="uid://cvkc0lp2nyiom" path="res://scenes/player/Player.tscn" id="16_m15e3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rlg1h"]
 render_priority = 0
@@ -20423,6 +20422,9 @@ size = Vector3(24.8672, 6.07074, 1)
 
 [node name="LaberintoScene" type="Node3D"]
 
+[node name="Player" parent="." instance=ExtResource("16_m15e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 38)
+
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
@@ -20558,9 +20560,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3199, 0.13083, 12.996)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("10_m15e3")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.50824, 1, -15.1403)
-
 [node name="Gardener" type="Node3D" parent="."]
 script = ExtResource("10_gwxdx")
 file_management/garden_work_directory = "res://scenes/gardener/"
@@ -20578,14 +20577,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64543, 0, -23.0141)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.397247, 0)
 shape = SubResource("BoxShape3D_isovq")
 
-[node name="SceneChangeTrigger" parent="." instance=ExtResource("15_h23jp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5095, 1.03246, -21.1991)
-target_scene = ExtResource("16_m15e3")
+[node name="InteractableObsidian" parent="." instance=ExtResource("15_m15e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -4)
+message = "Recogiste una piedra de obsidiana."
 
-[node name="CollisionShape3D" parent="SceneChangeTrigger" index="0"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.673993, -0.588299)
-
-[node name="Obsidian" parent="." instance=ExtResource("17_bjfrv")]
-transform = Transform3D(1.74705, 0, 0, 0, 1.74705, 0, 0, 0, 1.74705, -11.3794, 0.185145, -4.42732)
-
-[editable path="SceneChangeTrigger"]
+[node name="Obsidian" parent="InteractableObsidian" instance=ExtResource("16_bjfrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.724233, 0)

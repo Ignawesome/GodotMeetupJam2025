@@ -1,7 +1,7 @@
 class_name LuzMala
 extends Area3D
 
-@export var player : Player
+var player = null
 @export var is_pursuing := false
 @export var speed := 2.0
 @export var escape_speed := 4.0
@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if (body.get_name() == 'Player'):
 		reached_player.emit()
 
 func emit_sound() -> void:

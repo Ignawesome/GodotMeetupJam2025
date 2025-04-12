@@ -1,15 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbvlx3ebok75r"]
+[gd_scene load_steps=3 format=3 uid="uid://ct4be5ugc2yn"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_dsn4c"]
+[ext_resource type="Script" uid="uid://b023jnb5iqg5l" path="res://scenes/elements/interactable.gd" id="1_q0fqx"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_dsn4c"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqni8"]
+size = Vector3(1.36481, 1, 1.20609)
 
-[node name="Interactable" type="StaticBody3D"]
-collision_layer = 32
-collision_mask = 0
+[node name="Interactable" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_q0fqx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_dsn4c")
+shape = SubResource("BoxShape3D_hqni8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_dsn4c")
+[node name="PopUp" type="ColorRect" parent="."]
+offset_top = 517.0
+offset_right = 1280.0
+offset_bottom = 607.0
+color = Color(0, 0, 0, 0.541176)
+
+[node name="Label" type="Label" parent="PopUp"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 90.0
+horizontal_alignment = 1
+vertical_alignment = 1
