@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="La Luz Mala"
-run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
+run/main_scene="uid://c44ba86wa1n"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.svg"
 
