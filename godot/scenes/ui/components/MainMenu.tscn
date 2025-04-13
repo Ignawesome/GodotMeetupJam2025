@@ -1259,28 +1259,32 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Credits" type="RichTextLabel" parent="."]
+[node name="Credits" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 560.0
-offset_top = 97.0
-offset_right = 1278.0
-offset_bottom = 724.0
-text = "UNQJAM 2025 - La Brasa De Los Muertos
+offset_left = 878.0
+offset_top = 54.0
+offset_right = 1228.0
+offset_bottom = 704.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ja6t7")
 
+[node name="Credits" type="RichTextLabel" parent="Credits"]
+layout_mode = 2
+text = "UNQJAM 2025 - Kuyen Rupu
 
 
 Proyecto colaborativo de la mano de:
-Sebastián 
-Tomás 
+Andrés
+Charlie 
+Dora 
 Enrique 
+Ignacio 
 Ivan 
 Lucas 
-Andrés 
-Dora 
-Ignacio 
-Charlie 
+Sebastián 
 Sebastián
+Rodrigo
+Tomás 
 
 Créditos:
 
